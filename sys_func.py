@@ -1,3 +1,5 @@
 import platform
 
-print(platform.platform())
+
+def os_print():
+    print(platform.platform())

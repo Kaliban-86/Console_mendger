@@ -1,6 +1,7 @@
 #Основной модуль для запуска и отображения основного меню
 from Victory import play_victory
 from bank import bank
+from sys_func import os_print
 while True:
     print('*КОНСОЛЬНЫЙ ФАЙЛОВЫЙ МЕНДЖЕР*')
     print('')
@@ -22,6 +23,8 @@ while True:
 
     if choice_num == 13:
         break
+    elif choice_num ==7:
+        os_print()
     elif choice_num == 9:
         print('Вадим Викторович')
     elif choice_num == 10:
