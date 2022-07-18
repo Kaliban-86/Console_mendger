@@ -8,6 +8,7 @@ from remove_dir_func import remove_dir
 from copy_func import copy_file
 from file_list_func import file_list_in_dir, dir_list_in_dir
 from change_dir_func import change_dir
+from save_dir import save_lisdir
 
 while True:
     print('*****************************')
@@ -25,12 +26,15 @@ while True:
     print('9. Играть в викторину')  # +
     print('10. Мой бансковский счет')  # +
     print('11. Смена рабочей директории')
-    print('12. Выход')  # +
+    print('12 Сохранить в файл список директорий и файлов')
+    print('13. Выход')  # +
 
     choice_num = int(input('Введите номер операции: '))
 
-    if choice_num == 12:
+    if choice_num == 13:
         break
+    elif choice_num == 12:
+        save_lisdir()
     elif choice_num == 1:
         make_new_dir()
     elif choice_num == 2:
