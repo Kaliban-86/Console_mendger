@@ -44,26 +44,32 @@ def bank():
         print('4. Состояние счета')
         print('5. выход')
 
-        choice = input('Выберите пункт меню: ')
-        if choice == '1':
+        try:
+            choice = int(input('Выберите пункт меню: '))
+        except Exception as e:
+            print('Вы ввели не число!')
+            print(e)
+            break
+
+        if choice == 1:
             bank_account = bank_account_replenishment(bank_account,
                                                       amount_of_money=int(input('Введите сумму для пополнения: ')))
             print(f'На вашем счету: {bank_account} денег')
 
-        elif choice == '2':
+        elif choice == 2:
             func_res = buy_function(bank_account, price=int(input('Введите стоимость  покупки: ')))
             if func_res is not None:
                 bank_account = func_res[0]
                 history[func_res[1]] = func_res[2]
                 print(f'вы купили {func_res[1]} за {func_res[2]} рублей, осталось на счете {bank_account} рублей')
 
-        elif choice == '3':
+        elif choice == 3:
             print(history)
 
-        elif choice == '4':
+        elif choice == 4:
             print(bank_account)
 
-        elif choice == '5':
+        elif choice == 5:
             with open('bank_account', 'w') as f:
                 f.write(str(bank_account))
 
