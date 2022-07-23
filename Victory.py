@@ -9,13 +9,13 @@ def play_victory():
                      'Mark Ruffalo': '03.03.1975'}
     random_count = 5
 
-    names = random.sample(list(famous_people.keys()), random_count)
     is_game = True
     true_count = 0
 
     while is_game:
-        for name in names:
+        for name in [name for name in random.sample(list(famous_people.keys()), random_count)]:
             user_answer = input(f'Угадайте дату рождения {name} : ')
+
             if user_answer == famous_people.get(name):
                 print('Верно!!')
                 true_count = true_count + 1
@@ -23,6 +23,7 @@ def play_victory():
                 print(f'Не верно, правильно {famous_people.get(name)} ')
 
         answer_to_game = input('Продолжить игру? да/нет: ')
+
         if answer_to_game == 'нет':
             is_game = False
 
